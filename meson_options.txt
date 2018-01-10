@@ -318,6 +318,13 @@ option('evas-loaders-disabler',
   value : []
 )
 
+option('ecore-imf-loaders-disabler',
+  type : 'array',
+  description : 'add names here to disable the loaders',
+  choices : ['xim', 'ibus', 'scim'],
+  value : []
+)
+
 option('harfbuzz',
   type : 'boolean',
   value : false,
