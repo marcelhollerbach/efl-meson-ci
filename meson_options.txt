@@ -172,6 +172,12 @@ option('ecore_imf',
   description : 'build evas'
 )
 
+option('embryo',
+  type : 'boolean',
+  value : true,
+  description : 'build evas'
+)
+
 option('build-id',
   type : 'string',
   value : 'none',
