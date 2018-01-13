@@ -125,6 +125,7 @@ subprojects = [
 ['efreet'           , false,  true, false, false,  true, false, []],
 ['eio'              , false,  true, false, false,  true,  true, []],
 ['efreet'           , false, false,  true, false, false, false, []],
+['ecore_imf_evas'   , false,  true, false, false, false, false, []],
 ]
 
 # We generate Efl_Config.h and config.h later, they will be available here

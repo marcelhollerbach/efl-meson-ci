@@ -190,6 +190,12 @@ option('efreet',
   description : 'build evas'
 )
 
+option('ecore_imf_evas',
+  type : 'boolean',
+  value : true,
+  description : 'build evas'
+)
+
 option('build-id',
   type : 'string',
   value : 'none',
