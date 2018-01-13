@@ -74,11 +74,13 @@ config_h.set_quoted('PACKAGE_STRING', meson.project_name() + ' ' + meson.project
 config_h.set_quoted('PACKAGE_NAME', meson.project_name())
 config_h.set_quoted('PACKAGE_BIN_DIR', dir_bin)
 config_h.set_quoted('PACKAGE_LIB_DIR', dir_lib)
-config_h.set_quoted('PACKAGE_BUILD_DIR', meson.current_source_dir())
+config_h.set_quoted('PACKAGE_SRC_DIR', meson.source_root())
+config_h.set_quoted('PACKAGE_BUILD_DIR', meson.current_build_dir())
 config_h.set_quoted('PACKAGE_SYSCONF_DIR', dir_sysconf)
 config_h.set_quoted('BINDIR', dir_bin)
 config_h.set_quoted('DATADIR', dir_data)
 config_h.set10('EFL_HAVE_THREADS', true)
+config_h.set('NEED_RUN_IN_TREE', '1')
 
 config_dir = [include_directories('.')]
 eolian_include_directories = []
@@ -127,6 +129,7 @@ subprojects = [
 ['efreet'           , false, false,  true, false, false, false, []],
 ['ecore_imf_evas'   , false,  true, false, false, false, false, []],
 ['ephysics'         , false,  true, false, false, false, false, []],
+['edje'             , false,  true,  true, false,  true,  true, []],
 ]
 
 # We generate Efl_Config.h and config.h later, they will be available here
@@ -142,7 +145,10 @@ example_dirs = []
 foreach package : subprojects
   package_name = package[0]
   package_version_name = package_name + '-' + version_major
-  package_c_args = ['-DPACKAGE_DATA_DIR="'+ join_paths(dir_data, package_name)+'"']
+  package_c_args = [
+    '-DPACKAGE_DATA_DIR="'+ join_paths(dir_data, package_name)+'"',
+    '-DNEED_RUN_IN_TREE=1'
+  ]
   if get_option(package_name)
     config_h.set('HAVE_'+package_name.to_upper(), '1')
 
@@ -183,6 +189,8 @@ foreach package : subprojects
 endforeach
 
 subdir(join_paths('src', 'generic', 'evas'))
+subdir(join_paths('data', 'edje', 'include'))
+
 
 if get_option('build-tests')
   check = dependency('check')

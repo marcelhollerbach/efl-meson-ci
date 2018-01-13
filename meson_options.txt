@@ -201,6 +201,13 @@ option('ephysics',
   value : true,
   description : 'build evas'
 )
+
+option('edje',
+  type : 'boolean',
+  value : true,
+  description : 'build evas'
+)
+
 option('build-id',
   type : 'string',
   value : 'none',
@@ -358,4 +365,10 @@ option('harfbuzz',
   type : 'boolean',
   value : false,
   description : 'harfbuzz support' 
+)
+
+option('edje-sound-and-video',
+  type : 'boolean',
+  value : true,
+  description : 'disable sound and video for edje'
 )
