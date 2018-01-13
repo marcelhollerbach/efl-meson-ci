@@ -196,6 +196,11 @@ option('ecore_imf_evas',
   description : 'build evas'
 )
 
+option('ephysics',
+  type : 'boolean',
+  value : true,
+  description : 'build evas'
+)
 option('build-id',
   type : 'string',
   value : 'none',
