@@ -178,6 +178,18 @@ option('embryo',
   description : 'build evas'
 )
 
+option('eio',
+  type : 'boolean',
+  value : true,
+  description : 'build evas'
+)
+
+option('efreet',
+  type : 'boolean',
+  value : true,
+  description : 'build evas'
+)
+
 option('build-id',
   type : 'string',
   value : 'none',

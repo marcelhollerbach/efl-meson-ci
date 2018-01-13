@@ -77,6 +77,7 @@ function_checks = [
   ['strerror_r', ['string.h']],
   ['pthread_getcpuclockid', ['pthread.h', 'time.h']],
   ['timerfd_create', ['sys/timerfd.h']],
+  ['kevent', ['sys/types.h', 'sys/event.h', 'sys/time.h']],
 #from here on we specify the dependencies
   ['dlopen', ['dlfcn.h'],                               ['dl']],
   ['dlsym', ['dlfcn.h'],                                ['dl']],
@@ -170,4 +171,8 @@ config_h.set_quoted('SHARED_LIB_SUFFIX', '.so')
 jpeg = dependency('libjpeg', required: false)
 if jpeg.found() == false
   jpeg = cc.find_library('jpeg')
+endif
+
+if config_h.has('HAVE_KEVENT')
+  config_h.set('HAVE_NOTIFY_KEVENT', '1')
 endif
