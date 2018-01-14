@@ -144,9 +144,11 @@ evas_pre = declare_dependency(
   dependencies: [eina, eo, ector, emile, evas_deps],
 )
 
+evas_pub_eo_file_target = pub_eo_file_target
+
 evas_pre_lib_dep = declare_dependency(
   include_directories: evas_include_directories + [vg_common_inc_dir],
-  sources : [evas_src, pub_eo_file_target],
+  sources : [evas_src, evas_pub_eo_file_target],
   dependencies: [evas_deps, m, draw, valgrind, libunibreak]
 )
 

@@ -8,8 +8,9 @@ evas_lib = library('evas',
 
 evas = declare_dependency(
    link_with : [evas_lib],
-   dependencies : [eina, ecore, ector, emile, evas_pre],
-   include_directories : evas_include_directories
+   include_directories: evas_include_directories + [vg_common_inc_dir],
+   dependencies : [eina, ecore, ector, emile, eo, evas_deps],
+   sources : evas_pub_eo_file_target,
 )
 
 evas_bin = declare_dependency(
