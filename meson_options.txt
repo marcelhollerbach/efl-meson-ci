@@ -214,6 +214,18 @@ option('emotion',
   description : 'build evas'
 )
 
+option('ethumb',
+  type : 'boolean',
+  value : true,
+  description : 'build evas'
+)
+
+option('ethumb_client',
+  type : 'boolean',
+  value : true,
+  description : 'build evas'
+)
+
 option('build-id',
   type : 'string',
   value : 'none',

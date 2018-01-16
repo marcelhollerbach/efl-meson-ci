@@ -131,6 +131,8 @@ subprojects = [
 ['ephysics'         , false,  true, false, false, false, false, []],
 ['edje'             , false,  true,  true, false,  true,  true, []],
 ['emotion'          ,  true,  true, false, false,  true,  true, []],
+['ethumb'           ,  true,  true,  true, false, false, false, []],
+['ethumb_client'    , false,  true,  true, false, false,  true, []],
 ]
 
 # We generate Efl_Config.h and config.h later, they will be available here
