@@ -208,6 +208,12 @@ option('edje',
   description : 'build evas'
 )
 
+option('emotion',
+  type : 'boolean',
+  value : true,
+  description : 'build evas'
+)
+
 option('build-id',
   type : 'string',
   value : 'none',
@@ -358,6 +364,13 @@ option('ecore-imf-loaders-disabler',
   type : 'array',
   description : 'add names here to disable the loaders',
   choices : ['xim', 'ibus', 'scim'],
+  value : []
+)
+
+option('emotion-loaders-disabler',
+  type : 'array',
+  description : 'add names here to disable the loaders',
+  choices : ['generic', 'gstreamer', 'gstreamer1', 'libvlc', 'xine'],
   value : []
 )
 
