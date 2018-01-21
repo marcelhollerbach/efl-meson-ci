@@ -51,6 +51,9 @@ if target_machine.system() == 'windows'
   eio_src += ['eio_monitor_win32.c']
 elif target_machine.system() == 'darwin'
   eio_src += ['eio_monitor_cocoa.c']
+  if target_machine.system() == 'darwin'
+    c_args += ['-framework', 'CoreServices']
+  endif
 elif cc.has_header('sys/inotify.h')
   eio_src += ['eio_monitor_inotify.c']
 elif target_machine.system() == 'bsd'
