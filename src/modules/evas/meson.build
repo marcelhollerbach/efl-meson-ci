@@ -82,7 +82,7 @@ foreach engine_conf : engines
         )
         if engine == 'gl_generic'
           #special case, see evas_module.c
-          config_h.set('EVAS_STATIC_BUILD_GL_COMMON', value)
+          config_h.set('EVAS_STATIC_BUILD_GL_COMMON', '1')
         else 
           config_h.set('EVAS_STATIC_BUILD_'+engine.to_upper(), '1')
         endif
