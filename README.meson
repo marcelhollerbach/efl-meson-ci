@@ -1,0 +1,15 @@
+# BUILDING EFL WITH MESON
+
+known issues:
+  - Build does notwork none static, related to in tree running, 
+
+recommented way of building (full feature):
+
+   (For now everything is build by default, reason for that is discovering of b0rkes after new meson patches!)
+
+   meson -Devas-modules=static
+
+autotools like version:
+
+   meson -Decore-imf-loaders-disabler=scim  -Demotion-loaders-disabler=gstreamer,libvlc -Devas-modules=static
+
