@@ -41,7 +41,7 @@ all_options = permutate(concated_options)
 print("GOING TO BUILD ALOT OF EFL")
 
 for k,v in pairs(all_options) do
-  cmd = "sh ./scripts/check_options.sh "..v
+  cmd = "sh ./scripts/check_options.sh "..v.." "..arg[1]
   exitcode = os.execute(cmd)
   if exitcode ~= true then
     print("command "..cmd.." failed. ")

@@ -3,7 +3,7 @@
 BUILD_DIR=`mktemp -d`
 INSTALL_DIR=`mktemp -d`
 
-meson $1 --prefix ${INSTALL_DIR} ${BUILD_DIR}
+meson $@ --prefix ${INSTALL_DIR} ${BUILD_DIR}
 
 ninja -C ${BUILD_DIR} all
 ninja -C ${BUILD_DIR} install
